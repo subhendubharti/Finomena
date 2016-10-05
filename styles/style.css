@@ -1,0 +1,152 @@
+html         { overflow-y:auto;overflow-x: auto; background:#aaa}
+body{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+.page        { 
+	position: absolute;
+    top:0;
+    left:0;
+    padding-top: 30vh;
+	text-align:center;
+	
+	width:100%; 
+    height: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.page h1 	{ font-size:60px; }
+.page a     { margin-top:50px; }
+#about      { color:#333; text-align:center;position: absolute;padding-top:10vh;width:100%;}
+.panel-heading{
+    cursor: pointer;
+}
+
+
+.page-home 		{ background:#00D0BC; color:#00404a; }
+.page-about 	{ background:#E59400; color:#933200; }
+.page-quiz 	{
+    background:#ddd; color:#000; 
+padding-top:25vh;
+}
+.page-score { background:#aaa; color:#ffffff}
+
+.page-quiz #rippleContainer{
+    box-shadow: 3px 3px 5px grey, -3px 0px 5px grey;
+    z-index:3;
+    border: 2px solid  #cccccc;
+    max-width:700px;
+    background:rgb(240,240,240);
+    margin:0 auto;
+    border-radius: 4px;
+}
+.page-quiz #rippleContainer .options{
+list-style-type: none;
+}
+.page-quiz #rippleContainer .options li{
+display: inline-block;
+margin: 5px 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.page-quiz .name,.page-score .name{
+    text-transform: capitalize;
+}
+
+.page.ng-leave 	{ z-index:9999; }
+.page.ng-enter 	{ z-index:8888; }
+
+
+.page-home.ng-leave         {
+   -webkit-animation:slideOutLeft 0.8s both ease-in;
+	-moz-animation:slideOutLeft 0.8s both ease-in;
+	animation:slideOutLeft 0.8s both ease-in;  
+}
+.page-score.ng-leave         {
+   -webkit-animation:slideOutLeft 0.8s both ease-in;
+	-moz-animation:slideOutLeft 0.8s both ease-in;
+	animation:slideOutLeft 0.8s both ease-in;  
+}
+.page-score.ng-enter 		{  
+   -webkit-animation:slideInRight 0.8s both ease-in;
+	-moz-animation:slideInRight 0.8s both ease-in;
+	animation:slideInRight 0.s both ease-in;    
+}
+
+.page-about.ng-leave        {
+    -webkit-animation:slideOutLeft 0.8s both ease-in;
+	-moz-animation:slideOutLeft 0.8s both ease-in;
+	animation:slideOutLeft 0.8s both ease-in;   
+}
+.page-about.ng-enter 		{  
+    -webkit-animation:slideInRight 0.8s both ease-in;
+	-moz-animation:slideInRight 0.8s both ease-in;
+	animation:slideInRight 0.8s both ease-in;    
+}
+
+.page-quiz.ng-leave      {
+ -webkit-animation:slideOutLeft 0.8s both ease-in;
+	-moz-animation:slideOutLeft 0.8s both ease-in;
+	animation:slideOutLeft 0.8s both ease-in;  
+}
+.page-quiz.ng-enter 		{ 
+    -webkit-animation:slideInRight 0.8s both ease-in;
+	-moz-animation:slideInRight 0.8s both ease-in;
+	animation:slideInRight 0.8s both ease-in;    
+}
+
+
+
+@keyframes slideInRight {
+	from 	{ transform:translateX(100%); }
+	to 		{ transform: translateX(0); }
+}
+@-moz-keyframes slideInRight {
+	from 	{ -moz-transform:translateX(100%); }
+	to 		{ -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInRight {
+	from 	{ -webkit-transform:translateX(100%); }
+	to 		{ -webkit-transform: translateX(0); }
+}
+
+
+
+@keyframes slideOutLeft {
+	to 		{ transform: translateX(-100%); }
+}
+@-moz-keyframes slideOutLeft {	
+	to 		{ -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes slideOutLeft {
+	to 		{ -webkit-transform: translateX(-100%); }
+}
+
+@media(max-width:600px){
+    #answerTable>thead>tr>th,#answerTable>tbody>tr>th{
+        display: block;
+        text-align: center;
+    }
+    #answerTable>tbody>tr{
+        margin-bottom: 5px;
+    }
+    #rippleContainer .questionNumber{
+        font-size: 18px;
+    }
+    #rippleContainer .question{
+        font-size: 17px;
+    }
+   .page-quiz #rippleContainer ul.options>li{
+        font-size: 16px;
+    }
+    .page-quiz #rippleContainer ul>li:first-child{
+        margin-left:0px;
+    }
+    .page-quiz #rippleContainer ul>li:last-child{
+        margin-right:0px;
+    }
+}

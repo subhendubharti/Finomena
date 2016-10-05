@@ -1,0 +1,21 @@
+<div class="conatiner">
+    <h4>Hello <span class="name">{{name}}</span> </h4>
+    <div ng-hide="checkResult" id="rippleContainer" class="ripple">
+        <h2 class="questionNumber">{{questions[currQ].number}}</h2>
+        <h3 class="question">{{questions[currQ].question}}</h3>
+        <br>
+        <ul class="options">
+            <li ng-repeat="option in questions[currQ].options">
+
+                <input type=radio ng-model="questions[currQ].answer" name="answer{{currQ}}" ng-value="option" ng-change="submit()">&nbsp;{{option}}&nbsp;&nbsp;
+            </li>
+        </ul>
+    </div>
+    <div ng-if="checkResult">
+        <h3>{{message}}</h3>
+    </div>
+    <div>
+        <!--<button class="btn btn-primary" ng-click="submit()" id="quizSubmitBtn" ng-hide="checkResult">Submit & Go to Next</button>-->
+        <a href="#score" class="btn btn-primary" ng-if="checkResult">Check Score</a>
+    </div>
+</div>
